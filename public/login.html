@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    <title>HorizonHub | Log in</title>
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="icon" type="image/webp" href="https://cdn.glitch.com/85457187-b779-42e5-a481-ebedf70c0050%2Flogo.png?v=1619696193163">
+    
+    <meta charset="utf-8">
+    
+    <meta name="title" content="HorizonHub | Log in"/>
+    <meta name="description" content="HorizonHub"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#000001"/>
+    
+    <meta property="og:title" content="HorizonHub"/>
+    <meta property="og:description" content="HorizonHub"/>
+    <meta property="og:image" content="https://cdn.glitch.com/85457187-b779-42e5-a481-ebedf70c0050%2Flogo.png?v=1619696193163"/>
+    
+    <script async>if(location.protocol!=="https:")location.href="https:"+location.href.substring(location.protocol.length)</script>
+    
+    <script src="scripts/core.js" defer></script>
+    <script src="scripts/login.js" defer></script>
+    
+  </head>
+  <body style="text-align:center">
+    <div class="navbarWrapper">
+      <ul>
+        <li><a href="/" style="background:transparent;"><img src="https://cdn.glitch.com/85457187-b779-42e5-a481-ebedf70c0050%2Flogo.png?v=1619696193163" alt="HorizonHub | Freedom" title="HorizonHub" style="filter:none;height:48px;margin:-19px 0;"></a></li>
+        <li><a href="/email.html"><b>Email</b></a></li>
+        <li><a href="https://sites.google.com/view/horizonrp-factions"><b>Factions</b></a></li>
+        <li><a href="https://discord.gg/M44ztT5nu8">HorizonRP Discord</a></li>
+        <li style="float:right;display:none;" id="nav-logout"><a href="" id="nav-logout-button">Log out</a></li>
+        <li style="float:right;display:none;" id="nav-loggedin"><a style="background:none;" id="nav-loggedintext">Signed in as {email}</a></li>
+        <li style="float:right;display:none;" id="nav-login"><a href="/login.html">Log in</a></li>
+        <li style="float:right;display:none;" id="nav-register"><a href="/register.html">Sign up</a></li>
+      </ul>
+    </div>
+    <img src="https://cdn.glitch.com/85457187-b779-42e5-a481-ebedf70c0050%2Flogo.png?v=1619696193163" style="margin:40px 0;">
+    <h1>Welcome back!</h1>
+    <p>Sign in to your HorizonHub Account</p>
+    <form id="login-form" onsubmit="return false">
+      <input style="width:80%;max-width:400px;" type="text" id="login-email" placeholder="Email" autofocus><br>
+      <input type="password" id="login-password" placeholder="Password" style="margin-bottom:15px;width:80%;max-width:400px;"><br>
+      <button>Login</button>
+    </form>
+  </body>
+</html>

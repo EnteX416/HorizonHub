@@ -1,0 +1,52 @@
+list { padding: 0 !important; overflow-y: auto; }
+itemcell { display: inline-block; padding: 7px; width: 50%; text-overflow: ellipsis; white-space: nowrap; overflow: hidden; }
+
+item { display: list-item; outline: none; user-select: none; transition: 0.2s; }
+item.unread { background: rgb(75,75,75); }
+
+item:hover, item:focus-visible { background: rgb(0,100,200); transition: none; }
+item.selected { background: rgb(0,60,110); }
+
+#email-topbar {
+  background: rgb(60,60,60);
+  border-radius: 3px;
+  display: block;
+  margin: 5px 0;
+  padding: 3px;
+}
+
+#email-topbar button {
+  padding: 4px 12px;
+  border-radius: 3px;
+  margin: 2px;
+  background: rgb(45,45,45);
+  cursor: default;
+}
+#email-topbar button:hover { background: rgb(60,60,60); }
+#email-topbar button:active { background: rgb(40,40,40); }
+
+.labelChip {
+  border: 1px solid rgb(0,100,177);
+  color: gray;
+  border-radius: 128px;
+  padding: 6px 16px;
+  margin: 5px;
+  display: inline-block;
+}
+
+textarea {
+  border: 1px solid rgb(0,100,177);
+  border-radius: 20px;
+  padding: 6px 16px;
+  outline: none;
+  margin: 5px;
+  width: 100%;
+  height: calc(100% - 150px);
+  resize: none;
+}
+/*
+input[type="text"] {
+  background: white;
+  color: black;
+}
+input[type="text"]:focus { background: rgb(220,220,220); }*/
