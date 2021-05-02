@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    <title>HorizonHub | Email</title>
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="email.css">
+    
+    <link rel="icon" type="image/webp" href="https://cdn.glitch.com/85457187-b779-42e5-a481-ebedf70c0050%2Flogo.png?v=1619696193163">
+    
+    <meta charset="utf-8">
+    
+    <meta name="title" content="HorizonHub | Email"/>
+    <meta name="description" content="HorizonHub"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#000001"/>
+    
+    <meta property="og:title" content="HorizonHub"/>
+    <meta property="og:description" content="HorizonHub"/>
+    <meta property="og:image" content="https://cdn.glitch.com/85457187-b779-42e5-a481-ebedf70c0050%2Flogo.png?v=1619696193163"/>
+    
+    <script async>if(location.protocol!=="https:")location.href="https:"+location.href.substring(location.protocol.length)</script>
+    <script async>if(!sessionStorage.getItem("email"))location.href=location.origin+"/login.html"</script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/socket.io-client@2/dist/socket.io.js" defer></script>
+    <script src="scripts/external/favico.js" defer></script>
+    
+    <script src="scripts/core.js" defer></script>
+    <script src="scripts/email.js" defer></script>
+    
+  </head>
+  <body>
+    <div class="navbarWrapper">
+      <ul>
+        <li><a href="/" style="background:transparent;"><img src="https://cdn.glitch.com/85457187-b779-42e5-a481-ebedf70c0050%2Flogo.png?v=1619696193163" alt="HorizonHub" title="HorizonHub" style="filter:none;height:48px;margin:-19px 0;"></a></li>
+        <li><a href="/email.html"><b>Email</b></a></li>
+        <li><a href="https://sites.google.com/view/horizonrp-factions"><b>Factions</b></a></li>
+        <li><a href="https://discord.gg/M44ztT5nu8">HorizonRP Discord</a></li>
+        <li style="float:right;display:none;" id="nav-logout"><a href="" id="nav-logout-button">Log out</a></li>
+        <li style="float:right;display:none;" id="nav-loggedin"><a style="background:none;" id="nav-loggedintext">Signed in as {email}</a></li>
+        <li style="float:right;display:none;" id="nav-login"><a href="/login.html">Log in</a></li>
+        <li style="float:right;display:none;" id="nav-register"><a href="/register.html">Sign up</a></li>
+      </ul>
+    </div>
+    
+    <div id="email-topbar">
+      <button id="email-topbar-refresh">Refresh</button>
+      <button id="email-topbar-compose">Compose</button>
+      <b id="email-info-temporary">Working...</b>
+    </div>
+    
+    <div class="flexBody" style="height:calc(100vh - 100px)">
+      
+      <list id="email-categories" style="flex:0.8;background:rgb(60,60,60);border-radius:5px;margin-right:5px;">
+        <item tabindex="0" id="email-categories-Inbox" class="selected">
+          <itemcell style="width:100%"><b>📥 Inbox</b></itemcell>
+        </item>
+        <item tabindex="0" id="email-categories-Starred">
+          <itemcell style="width:100%"><b>⭐ Starred</b></itemcell>
+        </item>
+        <item tabindex="0" id="email-categories-Sent">
+          <itemcell style="width:100%"><b>📤 Sent</b></itemcell>
+        </item>
+      </list>
+      
+      <list id="email-list" style="flex:2;background:rgb(60,60,60);border-radius:5px;margin-right:5px;"></list>
+      
+      <div id="email-info-shown" style="background:white;color:black;border-radius:5px;flex:4;display:none;">
+        <div id="email-info-author" class="labelChip">From <b style="color:black">{authorName}</b> <inline style="color:black;user-select:all;">{author}</inline></div>
+        <div class="labelChip">Subject <b id="email-info-subject" style="color:black;user-select:all;">{subject}</b></div>
+        <div class="labelChip">Timestamp <b id="email-info-timestamp" style="color:black;user-select:all;">{timestamp}</b></div><br>
+        <div id="email-info-body" style="margin:10px 20px;overflow:scroll;height:80%;">{body}</div>
+      </div>
+      
+      <div id="email-info-hidden" style="background:rgb(60,60,60);color:gray;align-items:center;justify-content:center;border-radius:5px;flex:4;display:none;">
+        <div style="text-align:center">
+          <b><h1>Welcome back to the HorizonHub 👋</h1><br/>
+          Have a great day!</b>
+        </div>
+      </div>
+      
+      <div id="email-compose" style="background:rgb(60,60,60);border-radius:5px;flex:4;padding:10px 20px;display:none;">
+        <div class="flexBody" style="align-items:center;">
+          <b style="flex:1;text-align:center;">To</b> <input id="email-compose-to" type="text" placeholder="To Address" style="flex:12">
+        </div>
+        <div class="flexBody" style="align-items:center;">
+          <b style="flex:1;text-align:center;">Subject</b> <input id="email-compose-subject" type="text" placeholder="Subject" style="flex:12">
+        </div>
+        <textarea id="email-compose-body"></textarea><br>
+        <button id="email-compose-send">Send</button>
+      </div>
+      
+    </div>
+  </body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    <title>HorizonHub</title>
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="icon" type="image/webp" href="https://cdn.glitch.com/85457187-b779-42e5-a481-ebedf70c0050%2Flogo.png?v=1619696193163">
+    
+    <meta charset="utf-8">
+    
+    <meta name="title" content="HorizonHub"/>
+    <meta name="description" content="HorizonHub"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#000001"/>
+    
+    <meta property="og:title" content="HorizonHub"/>
+    <meta property="og:description" content="HorizonHub"/>
+    <meta property="og:image" content="https://cdn.glitch.com/85457187-b779-42e5-a481-ebedf70c0050%2Flogo.png?v=1619696193163"/>
+    
+    <script async>if(location.protocol!=="https:")location.href="https:"+location.href.substring(location.protocol.length);</script>
+    <script async>if(!sessionStorage.getItem("email"))location.href=location.origin+"/login.html"</script>
+    <script async>
+      const allowedEmails = [ // emails with access to admin panel
+        "horizon.hub@hub.hrp",
+        "wcente@hub.hrp",
+        "turnip@hub.hrp",
+      ];
+      if (!allowedEmails.includes(sessionStorage.getItem("email"))) window.location = "https://horizon-hub.glitch.me/";
+    </script>
+    
+    <script src="scripts/core.js" defer></script>
+    <script src="scripts/admin-panel.js" defer></script>
+    
+  </head>
+  <body style="text-align:center">
+    <div class="navbarWrapper">
+      <ul>
+        <li><a href="/" style="background:transparent;"><img src="https://cdn.glitch.com/85457187-b779-42e5-a481-ebedf70c0050%2Flogo.png?v=1619696193163" alt="HorizonHub" title="HorizonHub" style="filter:none;height:48px;margin:-19px 0;"></a></li>
+        <li><a href="/email.html"><b>Email</b></a></li>
+        <li><a href="https://sites.google.com/view/horizonrp-factions"><b>Factions</b></a></li>
+        <li><a href="https://discord.gg/aFjZ8TnMqU">Discord</a></li>
+        <li style="float:right;display:none;" id="nav-logout"><a href="" id="nav-logout-button">Log out</a></li>
+        <li style="float:right;display:none;" id="nav-loggedin"><a style="background:none;" id="nav-loggedintext">Signed in as {email}</a></li>
+        <li style="float:right;display:none;" id="nav-login"><a href="/login.html" id="nav-login-button"><b>Log in</b></a></li>
+        <li style="float:right;display:none;" id="nav-register"><a href="/register.html" id="nav-register-button"><b>Sign Up</b></a></li>
+      </ul>
+    </div>
+    
+    <h1 style="font-size: 40px;">Admin Panel</h1>
+    
+    <h1>Delete Account</h1>
+    <form id="delete-account" onsubmit="return false">
+      <input style="width:80%;max-width:400px;" type="text" id="delete-account-email" placeholder="Email of account to delete" autofocus><br>
+      <button class="critical">Delete</button>
+    </form>
+    <h1>Change Account-Name</h1>
+    <form id="change-name" onsubmit="return false">
+      <input style="width:80%;max-width:400px;" type="text" id="change-account-email" placeholder="Email of account to change" autofocus><br>
+      <input style="width:80%;max-width:400px;" type="text" id="change-name-email" placeholder="New Account-Name" autofocus><br>
+      <button class="uncritical">Change</button>
+    </form>
+  </body>
+</html>

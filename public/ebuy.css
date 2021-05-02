@@ -1,0 +1,42 @@
+.section-ebuy {
+  background: rgb(2,69,81);
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.div-ebuy {
+  background: rgb(0, 102, 102);
+  margin: 35px auto;
+  width: 480px;
+  box-shadow: 4px 4px 8px #262626;
+  border-radius: 25px;
+}
+.paragraph-ebuy {
+  max-width: 480px;
+  text-align: center;
+  margin: 12px 9px;
+}
+.price-ebuy {
+  max-width: 480px;
+  text-align: center;
+  font-size: 30px;
+}
+.headline-ebuy {
+  max-width: 480px;
+  text-align: center;
+  font-size: 40px;
+}
+.buy-ebuy {
+  max-width: 480px;
+  text-align: center;
+  margin: 12px 9px;
+  font-size: 10px;
+}
+.faction-ebuy {
+  max-width: 480px;
+  text-align: center;
+  margin: 12px 9px;
+  color: #ccffcc;
+}
